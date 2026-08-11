@@ -11,22 +11,18 @@ import LeanUWB.Basic
 #eval Float.sqrt 2.0
 #eval Float.sqrt 0.1
 #eval Float.sqrt (-1)
+#eval Float.sqrt (-1 + 10)
 #eval Float.cos 0 + 1
 #eval Nat.max 7 13 / Nat.min 5 6 - 91 % 9
 #eval 3 < 2 ^ 2
 #eval "hello" ++ " " ++ "world"
-#eval List.map (· ^ 3) (List.range 10)
+#eval List.range 10
 #check List.range
 #check List.range 10
-/- Requires Mathlib:
-#eval Nat.digits 7 100
-#check Nat.digits
-#check Nat.digits 7
-#check Nat.digits 7 100
--/
+#eval List.map (· ^ 3) (List.range 10)
 
 
--- ## Define a constant
+-- ## Definitions
 
 def myPi : Float := 3.14159
 
@@ -36,8 +32,6 @@ def myPi : Float := 3.14159
 #eval Float.sin (myPi / 6)
 #eval Float.sin (myPi * 9)
 
-
--- ## Define a function
 
 def rectanglePerimeter (a b : Nat) : Nat := 2 * (a + b)
 
