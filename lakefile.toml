@@ -1,0 +1,11 @@
+name = "LeanUWB"
+defaultTargets = ["LeanUWB"]
+
+[leanOptions]
+autoImplicit = false
+relaxedAutoImplicit = false
+pp.structureInstances = false
+
+[[lean_lib]]
+name = "LeanUWB"
+globs = ["LeanUWB.+"]
