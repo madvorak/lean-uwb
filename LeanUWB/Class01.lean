@@ -103,19 +103,19 @@ private def sumRow (f : Nat → Nat → Float) (m : Nat) : Nat → Float
 | 0   => 0.0
 | n+1 => f m n + sumRow f m n
 
-private def sumTable (f : Nat → Nat → Float) (n : Nat) : Nat → Float
+private def sumGrid (f : Nat → Nat → Float) (n : Nat) : Nat → Float
 | 0   => 0.0
-| m+1 => sumRow f m n + sumTable f n m
+| m+1 => sumRow f m n + sumGrid f n m
 
-def sumGrid (f : Nat → Nat → Float) (n : Nat) : Float :=
-sumTable f n n
+def sum2D (f : Nat → Nat → Float) (n : Nat) : Float :=
+sumGrid f n n
 
-#eval sumGrid ↓↓1.0 7
-#eval sumGrid ↓Nat.toFloat 5
-#eval sumGrid (Nat.toFloat <| · * ·) 4
-#eval sumGrid (if · = · then 1.0 else 0.0) 42
-#eval sumGrid (fun a b : Nat => 1.0 / (1.0 + Nat.toFloat a) / (1.0 + Nat.toFloat b)) 100
-#eval sumGrid (fun a b : Nat => 1.0 / (2.0 ^ Nat.toFloat (a + b))) 20
+#eval sum2D ↓↓1.0 7
+#eval sum2D ↓Nat.toFloat 5
+#eval sum2D (Nat.toFloat <| · * ·) 4
+#eval sum2D (if · = · then 1.0 else 0.0) 42
+#eval sum2D (fun a b : Nat => 1.0 / (1.0 + Nat.toFloat a) / (1.0 + Nat.toFloat b)) 100
+#eval sum2D (fun a b : Nat => 1.0 / (2.0 ^ Nat.toFloat (a + b))) 20
 
 
 def ackermann : Nat → Nat → Nat
