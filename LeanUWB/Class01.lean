@@ -14,7 +14,7 @@ import LeanUWB.Basic
 #eval Float.sqrt (-1 + 10)
 #eval Float.cos 0 + 1
 #eval Nat.max 7 13 / Nat.min 5 6 - 91 % 9
-#eval 3 < 2 ^ 2
+#eval 2 ^ 3 < 3 ^ 2
 #eval "hello" ++ " " ++ "world"
 #eval List.range 10
 #check List.range
@@ -113,7 +113,7 @@ sumGrid f n n
 #eval sum2D ↓↓1.0 7
 #eval sum2D ↓Nat.toFloat 5
 #eval sum2D (Nat.toFloat <| · * ·) 4
-#eval sum2D (if · = · then 1.0 else 0.0) 42
+#eval sum2D (if · == · then 1.0 else 0.0) 42
 #eval sum2D (fun a b : Nat => 1.0 / (1.0 + Nat.toFloat a) / (1.0 + Nat.toFloat b)) 100
 #eval sum2D (fun a b : Nat => 1.0 / (2.0 ^ Nat.toFloat (a + b))) 20
 
