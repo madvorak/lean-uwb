@@ -4,6 +4,20 @@
 
 madv@kma.zcu.cz
 
+## Links
+
+[Font and color scheme setup](https://github.com/madvorak/vscode-lean4-colors)
+
+[The Lean Language Reference](https://lean-lang.org/doc/reference/latest/)
+
+[Mathlib documentation](https://leanprover-community.github.io/mathlib4_docs/index.html)
+
+[Lean Game Server](https://adam.math.hhu.de/)
+
+[Lean Discord](https://discord.gg/WZ9bs9UCvx)
+
+[Lean Zulip](https://leanprover.zulipchat.com/)
+
 ## Preliminary plan
 
 * 2026-08-13: basics
