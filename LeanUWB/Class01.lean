@@ -43,8 +43,8 @@ def rectanglePerimeter (a b : Nat) : Nat := 2 * (a + b)
 
 -- ## Conditionals
 
-def parity (n : Nat) : String :=
-if n % 2 = 0
+def parity (n : Int) : String :=
+if n % 2 == 0
 then "even"
 else "odd"
 
@@ -56,7 +56,7 @@ else "odd"
 
 
 def pairIncreasing (x y : Int) : List Int :=
-if x = y
+if x == y
 then [x]
 else if x < y
      then [x, y]
