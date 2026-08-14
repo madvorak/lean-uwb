@@ -100,8 +100,8 @@ partial def digitalRoot (a : Nat) : Nat := 0 -- TODO
 
 def max3D (g : Nat → Nat → Nat → Nat) (n : Nat) : Nat := 0 -- TODO
 
-#eval max3D (fun x y z => x + y - z) 10    /- `18` -/
-#eval max3D (fun x y z => x * (6-x) * y * (4-y) * z * (10-z)) 7    /- `900` -/
+#eval max3D (· + · - ·) 10    /- `18` -/
+#eval max3D (fun x y z : Nat => x * (6-x) * y * (4-y) * z * (10-z)) 7    /- `900` -/
 
 
 def isPrime (a : Nat) : Bool := false -- TODO
