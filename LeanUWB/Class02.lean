@@ -60,8 +60,8 @@ def allEqual {T : Type} [DecidableEq T] : List T → Bool
 
 
 def dotproduct : List Float → List Float → Float
-| [ ]    , _     => 0.0
-| _      , [ ]   => 0.0
+| [ ]   , _      => 0.0
+| _     , [ ]    => 0.0
 | a :: x, b :: y => a*b + dotproduct x y
 
 #eval dotproduct [3, 0, 0.5, -2] [2, 8.7, 4, -1]
@@ -93,7 +93,7 @@ rever ∘ oddList
 #eval sum (oddListIncr 8)
 
 
-def reversAppend {T : Type} (x : List T) : List T → List T
+private def reversAppend {T : Type} (x : List T) : List T → List T
 | [ ]    => x
 | d :: l => reversAppend (d :: x) l
 
