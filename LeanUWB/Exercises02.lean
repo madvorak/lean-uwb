@@ -1,16 +1,19 @@
 import LeanUWB.Class02
 
 
-def multiplesSeven : Nat → List Nat
-:= fun _ => [] -- TODO delete this line and implement the function
+def product : List Int → Int
+:= fun _ => 0 -- TODO delete this line and implement the function
 
-#eval multiplesSeven 6
+#eval product [2, 3]
+#eval product [-3, 15, -2]
+#eval product [953812, -748513, 0, -982331, 198234]
 
 
 def areEqual {T : Type} [DecidableEq T] : List T → Bool
 | [ ]         => true
 | [ _ ]       => true
 | d :: e :: l => (d == e) && areEqual l
+-- TODO find out what is different from `allEqual`
 
 #eval areEqual [5, 5, 5, 5]
 #eval areEqual [5, 5, 3, 5]
@@ -22,14 +25,6 @@ def areEqual {T : Type} [DecidableEq T] : List T → Bool
 #eval areEqual (oddList 3)
 #eval areEqual (oddList 2)
 #eval areEqual (oddList 1)
-
-
-def product : List Int → Int
-:= fun _ => 0 -- TODO delete this line and implement the function
-
-#eval product [2, 3]
-#eval product [-3, 15, -2]
-#eval product [953812, -748513, 0, -982331, 198234]
 
 
 def skipRepetition {T : Type} [DecidableEq T] : List T → List T
