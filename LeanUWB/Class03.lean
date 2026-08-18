@@ -33,10 +33,14 @@ example (a b c : ℝ) (ha : a = 2) (hb : b = 3) (hc : c = 5) : a + b = c := by
   rw [ha, hb, hc]
   norm_num
 
+example (a : ℝ) (h2 : a = 2) (h3 : a = 3) : False := by
+  rw [h2] at h3
+  norm_num at h3
+
 example (x : ℝ) (hx : x ≠ 0) : x^2 / x = x := by
   field_simp
 
-theorem plus_prevracena (x : ℝ) (hx : x ≠ 0) : x + 1/x = (x^2 + 1) / x := by
+example (x : ℝ) (hx : x ≠ 0) : x + 1/x = (x^2 + 1) / x := by
   field_simp
 
 example (x y z : ℝ) (hx : x ≠ 0) : x*y*z + 3*y*z*x - 2*z*x*y = y*x*z + x^2*z*y/x := by
