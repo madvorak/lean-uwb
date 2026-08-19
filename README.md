@@ -6,7 +6,7 @@ madv@kma.zcu.cz
 
 ## Links
 
-[Font and color scheme setup](https://github.com/madvorak/vscode-lean4-colors)
+[Font and color scheme setup for VS Code](https://github.com/madvorak/vscode-lean4-colors)
 
 [The Lean Language Reference](https://lean-lang.org/doc/reference/latest/)
 
@@ -27,7 +27,7 @@ madv@kma.zcu.cz
 #### Interactive theorem proving
 * [2026-08-17](LeanUWB/Class03.lean) : equalities and inequalities; searching in Mathlib
 * [2026-08-18](LeanUWB/Class04.lean) : implication; Curry-Howard correspondence
-* 2026-08-19 : conjunction, disjunction, negation, equivalence
+* [2026-08-19](LeanUWB/Class05.lean) : conjunction, disjunction, equivalence, negation
 * 2026-08-20 : quantifiers, sets
 * 2026-08-21 : properties of functions; Cantor's theorem
 * 2026-08-24 : Schröder-Bernstein theorem
