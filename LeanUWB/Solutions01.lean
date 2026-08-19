@@ -109,18 +109,52 @@ else digitalRoot (digitSum a)
 #eval digitalRoot 9999999999999999999999999999999999999999999999999999999999999    /- `9` -/
 
 
+private def max1D (f : Nat → Nat) : Nat → Nat
+| 0   => 0
+| n+1 => Nat.max (f n) (max1D f n)
+
+private def max2D (g : Nat → Nat → Nat) (m : Nat) : Nat → Nat
+| 0   => 0
+| n+1 => Nat.max (max1D (g n) m) (max2D g m n)
+
+private def max3D' (f : Nat → Nat → Nat → Nat) (k m : Nat) : Nat → Nat
+| 0   => 0
+| n+1 => Nat.max (max2D (f n) k m) (max3D' f k m n)
+
+def max3D (g : Nat → Nat → Nat → Nat) (n : Nat) : Nat := max3D' g n n n
+
+#eval max3D (· + · - ·) 10    /- `18` -/
+#eval max3D (fun x y z : Nat => x * (6-x) * y * (4-y) * z * (10-z)) 7    /- `900` -/
+
+
 private partial def squrtAux (x s : Nat) :=
 if s * s > x then s-1
 else squrtAux x (s+1)
 
-def squrt (x : Nat) : Nat := squrtAux x 0
+def squrt (x : Nat) : Nat :=
+squrtAux x 0
 
 private def isPrimeAux (n : Nat) : Nat → Bool
 | 0   => true
 | 1   => true
 | d+1 => n % (d+1) != 0 && isPrimeAux n d
 
-def isPrime (a : Nat) : Bool := (1 < a) && isPrimeAux a (squrt a)
+def isPrime (a : Nat) : Bool :=
+(1 < a) && isPrimeAux a (squrt a)
+
+
+private def sumDivisorsAux (n : Nat) : Nat → Nat
+| 0   => 0
+| d+1 => (if n % (d+1) == 0 then d+1 + n/(d+1) else 0) + sumDivisorsAux n d
+
+def isSquare (n : Nat) : Bool :=
+(squrt n) ^ 2 == n
+
+private def sumDivisors (n : Nat) : Nat :=
+sumDivisorsAux n (squrt n) - n - (if isSquare n then squrt n else 0)
+
+def isPerfect (a : Nat) : Bool :=
+sumDivisors a == a && a > 0
 
 
 def satisfBelow (condition : Nat → Bool) (n : Nat) :=
@@ -131,3 +165,9 @@ satisfBelow isPrime n
 
 #eval primesBelow 40
 #eval primesBelow 100
+
+def perfectBelow (n : Nat) :=
+satisfBelow isPerfect n
+
+#eval perfectBelow 500
+#eval perfectBelow 10000
