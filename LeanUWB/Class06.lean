@@ -9,35 +9,6 @@ example : ∃ n : ℕ, 2 ^ n = 512 := by
   use 9
   norm_num
 
-theorem nat_tight : ∀ n : ℕ, ∃ m : ℕ, ∀ k : ℕ, (k ≤ n → k < m) ∧ (n < k → m ≤ k) := by
-  intro n
-  use n + 1
-  intro k
-  constructor
-  · intro hkn
-    rw [Nat.lt_succ_iff]
-    exact hkn
-  · intro hnk
-    rw [Nat.succ_le_iff]
-    exact hnk
-
-theorem nat_tight' (n : ℕ) : ∃ m : ℕ, ∀ k : ℕ, (k ≤ n → k < m) ∧ (n < k → m ≤ k) := by
-  use n + 1
-  intro k
-  constructor
-  · apply Nat.lt_succ_of_le
-  · apply Nat.lt_of_succ_le
-
-theorem nat_tight'' (n : ℕ) : ∃ m : ℕ, ∀ k : ℕ, (k ≤ n → k < m) ∧ (n < k → m ≤ k) := by
-  use n + 1
-  grind
-
-theorem real_not_tight (n : ℝ) : ¬(∃ m : ℝ, ∀ k : ℝ, (k ≤ n → k < m) ∧ (n < k → m ≤ k)) := by
-  push Not
-  intro m
-  use (n + m) / 2
-  grind
-
 theorem real_dense (x z : ℝ) (hxz : x < z) : ∃ y : ℝ, x < y ∧ y < z := by
   use (x + z) / 2
   constructor

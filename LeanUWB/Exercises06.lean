@@ -52,9 +52,3 @@ example (P : Prop) (Q : ℕ → Prop) :
 example (P : Prop) (Q : ℕ → Prop) :
     ((∃ n : ℕ, Q n) → P) ↔ (∀ n : ℕ, Q n → P) := by
   sorry -- TODO prove
-
-example {α : Type} (A B C : Set α) : A \ (B ∩ C) = (A \ B) ∪ (A \ C) := by
-  sorry -- TODO prove
-
-example {α : Type} (A B C : Set α) : A \ (B ∪ C) = (A \ B) ∩ (A \ C) := by
-  sorry -- TODO prove
