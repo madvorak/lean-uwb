@@ -1,6 +1,6 @@
 import LeanUWB.Basic
 
--- Allowed tactics: `exact`, `apply`, `intro`, `constructor`, `left`, `right`, `cases`, `obtain`, `rw`, `use`, `specialize`
+-- Allowed tactics: `exact`, `apply`, `intro`, `constructor`, `left`, `right`, `cases`, `obtain`, `rw`, `use`, `specialize`, `if`
 -- The tactic `exact` is allowed only as `exact a` where `a` is anything from the local context.
 
 example (R : ℝ → List ℕ → Prop) (hR : ∀ a : ℝ, ∀ l : List ℕ, R a l) :
