@@ -28,8 +28,8 @@ madv@kma.zcu.cz
 * [2026-08-17](LeanUWB/Class03.lean) : equalities and inequalities; searching in Mathlib
 * [2026-08-18](LeanUWB/Class04.lean) : implication; Curry-Howard correspondence
 * [2026-08-19](LeanUWB/Class05.lean) : conjunction, disjunction, equivalence, negation
-* 2026-08-20 : quantifiers, sets
-* 2026-08-21 : properties of functions; Cantor's theorem
+* [2026-08-20](LeanUWB/Class06.lean) : quantifiers, sets
+* [2026-08-21](LeanUWB/Class07.lean) : properties of functions; Cantor's theorem
 * 2026-08-24 : Schröder-Bernstein theorem
 * 2026-08-25 : Schröder-Bernstein theorem
 * 2026-08-26 : induction
