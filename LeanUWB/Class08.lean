@@ -8,10 +8,10 @@ theorem bijectiv_and_bijectiv_of_comp_eq_id_and_comp_eq_id {A B : Type} {f : A �
     Bijectiv f ∧ Bijectiv g := by
   have hgf' : ∀ a : A, g (f a) = a
   · intro a
-    exact (congr_fun hgf a)
+    exact congr_fun hgf a
   have hfg' : ∀ b : B, f (g b) = b
   · intro b
-    exact (congr_fun hfg b)
+    exact congr_fun hfg b
   constructor
   · exact bijectiv_of_inverse hgf' hfg'
   · exact bijectiv_of_inverse hfg' hgf'

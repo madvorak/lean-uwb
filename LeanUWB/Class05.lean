@@ -107,11 +107,11 @@ example (n : ℕ) (h1 : n = 1) (h3 : n = 3) : n = 5 := by
   rw [h1] at h3
   norm_num at h3
 
-theorem impossible_equivalence {P : Prop} : (P ↔ ¬ P) → False := by
+theorem impossible_equivalence {P : Prop} : (P ↔ ¬P) → False := by
   intro hyp
   if p : P
   then
-    have np : ¬ P
+    have np : ¬P
     · rw [hyp] at p
       exact p
     exact np p
@@ -120,5 +120,5 @@ theorem impossible_equivalence {P : Prop} : (P ↔ ¬ P) → False := by
     rw [hyp]
     exact p
 
-example {P : Prop} : (P ↔ ¬ P) → False := by
+example {P : Prop} : (P ↔ ¬P) → False := by
   tauto

@@ -37,24 +37,24 @@ theorem int_not_dense : ¬(∀ x z : ℤ, x < z → ∃ y : ℤ, x < y ∧ y < z
   use 3, 4
   grind
 
-theorem deMorgan_ex {α : Type} {R : α → Prop} (hR : ∃ a : α, R a) : ¬(∀ a : α, ¬ R a) := by
+theorem deMorgan_ex {α : Type} {R : α → Prop} (hR : ∃ a : α, R a) : ¬(∀ a : α, ¬(R a)) := by
   obtain ⟨a, ha⟩ := hR
   intro hR'
   apply hR'
   exact ha
 
-example {α : Type} {R : α → Prop} (hR : ∃ a : α, R a) : ¬(∀ a : α, ¬ R a) := by
+example {α : Type} {R : α → Prop} (hR : ∃ a : α, R a) : ¬(∀ a : α, ¬(R a)) := by
   obtain ⟨a, ha⟩ := hR
   push Not
   use a
 
-example {α : Type} {R : α → Prop} (hR : ∃ a : α, R a) : ¬(∀ a : α, ¬ R a) := by
+example {α : Type} {R : α → Prop} (hR : ∃ a : α, R a) : ¬(∀ a : α, ¬(R a)) := by
   tauto
 
-example {α : Type} {R : α → Prop} (hR : ∃ a : α, R a) : ¬(∀ a : α, ¬ R a) :=
+example {α : Type} {R : α → Prop} (hR : ∃ a : α, R a) : ¬(∀ a : α, ¬(R a)) :=
   Exists.classicalRecOn hR
 
-example (A : ℕ × ℝ → Prop) (hA : ∃ x : ℕ × ℝ, A x) : ¬(∀ p : ℕ × ℝ, ¬ A p) :=
+example (A : ℕ × ℝ → Prop) (hA : ∃ x : ℕ × ℝ, A x) : ¬(∀ p : ℕ × ℝ, ¬(A p)) :=
   deMorgan_ex hA
 
 example (S : Set ℤ) (hS : ∃ e : ℤ, e ∈ S) : ¬(∀ a : ℤ, a ∉ S) :=
