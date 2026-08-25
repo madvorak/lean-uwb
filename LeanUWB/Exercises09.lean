@@ -7,7 +7,7 @@ example : ∃ f : (ℕ → Fin 2) → (ℕ → Fin 3), Bijectiv f :=
 
 /-- The ultimate goal of this exercise:  -/
 example {A B : Type} (𝔸 : Set A) (𝔹 : Set B) :
-    (∃ f : 𝔸 → 𝔹, Bijectiv f) ↔ (∃ f : 𝔸 → 𝔹, Injectiv f) ∧ (∃ g : 𝔹 → 𝔸, Injectiv g) :=
+    (∃ f : 𝔸 → 𝔹, Bijectiv f) ↔ ((∃ f : 𝔸 → 𝔹, Injectiv f) ∧ (∃ g : 𝔹 → 𝔸, Injectiv g)) :=
   sorry -- Do not prove here! See `Class09` for a finished proof.
 
 
