@@ -152,5 +152,32 @@ theorem thmSchroderBernstein :
         · exact dif_neg hy
         apply hf
         exact hxy
-  · intro b
-    sorry -- TODO
+  · intro z
+    if hz : EvenGeneration g f z then
+      have hgz : OddGeneration f g (g z)
+      · exact hz.nextOddGeneration
+      use g z
+      convert_to funOdd hgz = z
+      · exact dif_pos hgz
+      have hgg : g (funOdd hgz) = g z
+      · exact hgz.g_funOdd
+      by_contra hzz
+      apply hg (funOdd hgz) z
+      · exact hzz
+      · exact hgg
+    else
+      by_contra hFz
+      apply hz
+      use 0
+      constructor
+      intro hfz
+      apply hFz
+      obtain ⟨a, haz⟩ := hfz
+      have ha : ¬ OddGeneration f g a
+      · intro ha
+        apply hz
+        rw [←haz]
+        exact ha.nextEvenGeneration
+      use a
+      convert haz
+      exact dif_neg ha
