@@ -18,22 +18,23 @@ madv@kma.zcu.cz
 
 [Lean Zulip](https://leanprover.zulipchat.com/)
 
-## Preliminary plan
+## Timeline
 
 #### Functional programming
 * [2026-08-13](LeanUWB/Class01.lean) : basics
 * [2026-08-14](LeanUWB/Class02.lean) : lists
 
 #### Interactive theorem proving
-* [2026-08-17](LeanUWB/Class03.lean) : equalities and inequalities; searching in Mathlib
-* [2026-08-18](LeanUWB/Class04.lean) : implication; Curry-Howard correspondence
+* [2026-08-17](LeanUWB/Class03.lean) : equalities and inequalities
+* [2026-08-18](LeanUWB/Class04.lean) : implication
 * [2026-08-19](LeanUWB/Class05.lean) : conjunction, disjunction, equivalence, negation
 * [2026-08-20](LeanUWB/Class06.lean) : quantifiers, sets
-* [2026-08-21](LeanUWB/Class07.lean) : properties of functions; Cantor's theorem
-* 2026-08-24 : Schröder-Bernstein theorem
-* 2026-08-25 : Schröder-Bernstein theorem
-* 2026-08-26 : induction
-
-#### Fully automated theorem proving
-* 2026-08-27 : AI for theorem proving
-* 2026-08-28 : AI for theorem proving
+* [2026-08-21](LeanUWB/Class07.lean) : properties of functions
+* [2026-08-24](LeanUWB/Class08.lean) : Cantor's theorem
+* [2026-08-25](LeanUWB/Exercises09.lean) : Schröder-Bernstein theorem
+* [2026-08-26](LeanUWB/Class09.lean) : Schröder-Bernstein theorem
+* [2026-08-27](LeanUWB/Class11.lean) : induction
+* [2026-08-28](LeanUWB/Class12.lean) : induction
+* [2026-09-03] : induction generalizing
+* [2026-09-10] : TBA
+* [2026-09-17] : TBA
