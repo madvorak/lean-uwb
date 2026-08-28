@@ -27,3 +27,13 @@ theorem pow_two_lt_two_pow (n : ℕ) (hn : n > 4) : n ^ 2 < 2 ^ n := by
   · exact (Nat.sub_eq_iff_eq_add hn).→ rfl
   rw [h5]
   exact pow_two_lt_two_pow_aux (n - 5)
+
+
+-- Question from the audience: how to define new inductive types
+
+inductive RootedBinaryTree : Type
+| null
+| branching (leftChild : RootedBinaryTree) (rightChild : RootedBinaryTree)
+
+def leaf : RootedBinaryTree :=
+  RootedBinaryTree.branching RootedBinaryTree.null RootedBinaryTree.null
