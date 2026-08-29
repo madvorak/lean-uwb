@@ -93,7 +93,7 @@ rever ∘ oddList
 #eval sum (oddListIncr 8)
 
 
-private def reversAppend {T : Type} (x : List T) : List T → List T
+/-private-/ def reversAppend {T : Type} (x : List T) : List T → List T
 | [ ]    => x
 | d :: l => reversAppend (d :: x) l
 

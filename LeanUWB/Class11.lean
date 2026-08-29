@@ -35,5 +35,5 @@ inductive RootedBinaryTree : Type
 | null
 | branching (leftChild : RootedBinaryTree) (rightChild : RootedBinaryTree)
 
-def leaf : RootedBinaryTree :=
+def RootedBinaryTree.leaf :=
   RootedBinaryTree.branching RootedBinaryTree.null RootedBinaryTree.null
