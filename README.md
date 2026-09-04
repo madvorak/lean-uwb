@@ -36,6 +36,6 @@ madv@kma.zcu.cz
 * [2026-08-27](LeanUWB/Class11.lean) : induction
 * [2026-08-28](LeanUWB/Class12.lean) : induction
 * [2026-09-03](LeanUWB/Class13.lean) : induction generalizing
-* 2026-09-10 : structures
+* [2026-09-10](LeanUWB/Class14.lean) : structures, classes, and notation
 * 2026-09-17 : posets
 * 2026-09-24 : TBA
