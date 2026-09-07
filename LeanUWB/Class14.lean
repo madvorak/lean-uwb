@@ -63,3 +63,50 @@ theorem right_inverse_unique {T : Type} [Grupa T] {x y₁ y₂ : T} (hxy₁ : x 
     _ = 𝟙 ◆ y₂       := by rw [hy]
     _ = y₂           := by rw [Grupa.neutral_operate]
   rw [←hyy₁, ←hyy₂]
+
+
+def Podgrupa {T : Type} [Grupa T] (G : Set T) : Prop :=
+  𝟙 ∈ G ∧ ∀ x ∈ G, ∀ y ∈ G, x ◆ y ∈ G
+
+theorem podgrupa_singleton (T : Type) [Grupa T] : Podgrupa { (𝟙 : T) } := by
+  constructor
+  · simp
+  intro x hx y hy
+  simp_all
+  apply Grupa.neutral_operate
+
+
+instance : BinOp ℤ := ⟨(· + ·)⟩
+
+lemma binOp_int_apply (a b : ℤ) : a ◆ b = a + b := by
+  rfl
+
+instance : Semigrupa ℤ := by
+  constructor
+  intro x y z
+  exact (Int.add_assoc x y z).symm
+
+instance : Neutral ℤ := ⟨0⟩
+
+instance : Grupa ℤ := by
+  constructor
+  · exact Int.add_zero
+  · exact Int.zero_add
+  · intro x
+    use -x
+    exact Int.add_right_neg x
+  · intro x
+    use -x
+    exact Int.add_left_neg x
+
+theorem podgrupa_nasobky (k : ℤ) : Podgrupa { k * n | n : ℤ } := by
+  constructor
+  · use 0
+    exact Int.mul_zero k
+  intro x hx y hy
+  dsimp at hx hy ⊢
+  obtain ⟨xₙ, hxₙ⟩ := hx
+  obtain ⟨yₙ, hyₙ⟩ := hy
+  use xₙ + yₙ
+  rw [←hxₙ, ←hyₙ]
+  exact Int.mul_add k xₙ yₙ
