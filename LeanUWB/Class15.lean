@@ -133,3 +133,17 @@ def GreatFixpoint [Poset A] (F : A → A) (x : A) : Prop :=
 
 def LeastFixpoint [Poset A] (F : A → A) (x : A) : Prop :=
   Fixpoint F x ∧ (Set.ofPred (Fixpoint F)).LowerBound x
+
+
+-- ## Properties of functions w.r.t. relations
+
+def Monoton [Relation A] (F : A → A) : Prop :=
+  ∀ x y : A, x ⊑ y → F x ⊑ F y
+
+def JoinContinuous [CompleteLattic A] (F : A → A) : Prop :=
+  ∀ s : ℕ → A, (∀ n : ℕ, s n ⊑ s n.succ) →
+    F (⊔ { s n | n : ℕ }) = ⊔ { F (s n) | n : ℕ }
+
+def MeetContinuous [CompleteLattic A] (F : A → A) : Prop :=
+  ∀ s : ℕ → A, (∀ n : ℕ, s n.succ ⊑ s n) →
+    F (⊓ { s n | n : ℕ }) = ⊓ { F (s n) | n : ℕ }
