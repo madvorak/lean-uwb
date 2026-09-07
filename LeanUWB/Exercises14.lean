@@ -1,6 +1,10 @@
 import LeanUWB.Class14
 
 
+example {T : Type} [Grupa T] (a b c : T) :
+    ∃! x : T, ((a ◆ b) ◆ c) ◆ x = a := by
+  sorry
+
 theorem podgrupa_univ (T : Type) [Grupa T] : Podgrupa (⊤ : Set T) := by
   sorry
 
