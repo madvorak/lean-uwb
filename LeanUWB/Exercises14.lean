@@ -14,6 +14,6 @@ theorem podgrupa_inter {T : Type} [Grupa T] {G₁ G₂ : Set T} (hG₁ : Podgrup
 
 theorem not_podgrupa_union :
     ∃ T : Type, ∃ _ : Grupa T, ∃ G₁ G₂ : Set T,
-      (Podgrupa G₁ ∧ Podgrupa G₂) ∧ (¬ Podgrupa (G₁ ∪ G₂)) := by
+      (Podgrupa G₁ ∧ Podgrupa G₂) ∧ ¬(Podgrupa (G₁ ∪ G₂)) := by
   use ℤ, inferInstance
   sorry
