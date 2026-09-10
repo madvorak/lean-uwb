@@ -65,10 +65,10 @@ theorem right_inverse_unique {T : Type} [Grupa T] {x y₁ y₂ : T} (hxy₁ : x 
   rw [←hyy₁, ←hyy₂]
 
 
-def Podgrupa {T : Type} [Grupa T] (G : Set T) : Prop :=
+def Podmonoid {T : Type} [Grupa T] (G : Set T) : Prop :=
   𝟙 ∈ G ∧ ∀ x ∈ G, ∀ y ∈ G, x ◆ y ∈ G
 
-theorem podgrupa_singleton (T : Type) [Grupa T] : Podgrupa { (𝟙 : T) } := by
+theorem podmonoid_singleton (T : Type) [Grupa T] : Podmonoid { (𝟙 : T) } := by
   constructor
   · simp
   intro x hx y hy
@@ -99,7 +99,7 @@ instance : Grupa ℤ := by
     use -x
     exact Int.add_left_neg x
 
-theorem podgrupa_nasobky (k : ℤ) : Podgrupa { k * n | n : ℤ } := by
+theorem podmonoid_nasobky (k : ℤ) : Podmonoid { k * n | n : ℤ } := by
   constructor
   · use 0
     exact Int.mul_zero k
