@@ -7,12 +7,11 @@ import LeanUWB.Class08
 theorem left_inverse_eq_right_inverse {A B : Type} {f : A → B} {g₁ g₂ : B → A}
     (hfg : f ∘ g₁ = id) (hgf : g₂ ∘ f = id) :
     g₁ = g₂ := by
-  have hg₁ : (g₂ ∘ f) ∘ g₁ = g₁
-  · exact congr_arg (· ∘ g₁) hgf
-  have hg₂ : g₂ ∘ (f ∘ g₁) = g₂
-  · exact congr_arg (g₂ ∘ ·) hfg
-  rw [←hg₁, Function.comp_assoc]
-  exact hg₂
+  calc
+  _ = (g₂ ∘ f) ∘ g₁ := congr_arg (· ∘ g₁) hgf |>.symm
+  _ = g₂ ∘ (f ∘ g₁) := Function.comp_assoc g₂ f g₁
+  _ = g₂            := congr_arg (g₂ ∘ ·) hfg
+
 
 example {A B : Type} {f : A → B} {g₁ g₂ : B → A}
     (hfg : f ∘ g₁ = id) (hgf : g₂ ∘ f = id) :

@@ -86,19 +86,17 @@ lemma infim_is_great [CompleteLattic A] (S : Set A) (a : A) (ha : S.LowerBound a
 
 lemma Set.LeastUpperBound.eq_supre [CompleteLattic A] {S : Set A} {x : A} (hx : S.LeastUpperBound x) :
     x = ⊔S := by
-  apply Set.LeastUpperBound.is_unique
-  · exact hx
-  · constructor
-    · apply supre_is_upper
-    · apply supre_is_least
+  apply hx.is_unique
+  constructor
+  · apply supre_is_upper
+  · apply supre_is_least
 
 lemma Set.GreatLowerBound.eq_infim [CompleteLattic A] {S : Set A} {x : A} (hx : S.GreatLowerBound x) :
     x = ⊓S := by
-  apply Set.GreatLowerBound.is_unique
-  · exact hx
-  · constructor
-    · apply infim_is_lower
-    · apply infim_is_great
+  apply hx.is_unique
+  constructor
+  · apply infim_is_lower
+  · apply infim_is_great
 
 
 -- ## Fixpoints
