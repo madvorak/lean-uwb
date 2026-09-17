@@ -12,7 +12,6 @@ theorem left_inverse_eq_right_inverse {A B : Type} {f : A → B} {g₁ g₂ : B 
   _ = g₂ ∘ (f ∘ g₁) := Function.comp_assoc g₂ f g₁
   _ = g₂            := congr_arg (g₂ ∘ ·) hfg
 
-
 example {A B : Type} {f : A → B} {g₁ g₂ : B → A}
     (hfg : f ∘ g₁ = id) (hgf : g₂ ∘ f = id) :
     Bijectiv f := by
