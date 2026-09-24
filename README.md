@@ -38,7 +38,7 @@ madv@kma.zcu.cz
 * [2026-09-03](LeanUWB/Class13.lean) : induction generalizing
 * [2026-09-10](LeanUWB/Class14.lean) : structures, classes, and notation
 * [2026-09-17](LeanUWB/Class15.lean) : posets
-* 2026-09-25 at 16:00 : constructions of fixed points
+* [2026-09-25](LeanUWB/Exercises16.lean) : constructions of fixed points
 * 2026-10-01 : TBA
 * 2026-10-08 : TBA
 * 2026-10-15 : TBA
