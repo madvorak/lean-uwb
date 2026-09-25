@@ -39,8 +39,8 @@ madv@kma.zcu.cz
 * [2026-09-10](LeanUWB/Class14.lean) : structures, classes, and notation
 * [2026-09-17](LeanUWB/Class15.lean) : posets
 * [2026-09-25](LeanUWB/Exercises16.lean) : constructions of fixed points
-* 2026-10-01 : TBA
-* 2026-10-08 : TBA
-* 2026-10-15 : TBA
-* 2026-10-22 : TBA
-* 2026-10-29 : TBA
+* 2026-10-02 : TBA
+* 2026-10-09 : TBA
+* 2026-10-16 : TBA
+* 2026-10-23 : TBA
+* 2026-10-30 : TBA
