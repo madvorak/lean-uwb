@@ -6,9 +6,9 @@ attribute [grind] Injectiv
 theorem thmSchroderBernstein' {A B : Type} :
     ((∃ f : A → B, Injectiv f) ∧ (∃ g : B → A, Injectiv g)) → (∃ f : A → B, Bijectiv f) := by
   intro ⟨⟨f, hf⟩, ⟨g, hg⟩⟩
-  obtain ⟨hfg, -⟩ := leastFixpoint_infim_posfixpoint (show Monoton (fun S : Set A => (g '' (f '' S)ᶜ)ᶜ) from
+  obtain ⟨hfg, -⟩ := greatFixpoint_supre_prefixpoint (show Monoton (fun S : Set A => (g '' (f '' S)ᶜ)ᶜ) from
     ↓↓(compl_le_compl <| Set.image_mono <| compl_le_compl <| Set.image_mono ·))
-  set P := ⊓ Posfixpoint (fun S : Set A => (g '' (f '' S)ᶜ)ᶜ)
+  set P := ⊔ Prefixpoint (fun S : Set A => (g '' (f '' S)ᶜ)ᶜ)
   dsimp [Fixpoint] at hfg
   classical
   have hP : ∀ a ∉ P, ∃ b : B, g b = a
