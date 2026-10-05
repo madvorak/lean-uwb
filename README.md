@@ -40,7 +40,7 @@ madv@kma.zcu.cz
 * [2026-09-17](LeanUWB/Class15.lean) : posets
 * [2026-09-25](LeanUWB/Exercises16.lean) : constructions of fixed points
 * [2026-10-02](LeanUWB/Class17.lean) : Schröder-Bernstein theorem again
-* 2026-10-09 : TBA
+* [2026-10-09](LeanUWB/Class18.lean) : advanced linear inequalities
 * 2026-10-16 : TBA
 * 2026-10-23 : TBA
 * 2026-10-30 : TBA
