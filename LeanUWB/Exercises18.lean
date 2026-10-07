@@ -20,6 +20,11 @@ theorem equalityFarkas (A : Matrix I J F) (b : I → F) :
 
 -- Recommended tool:
 #check Matrix.fromCols
+-- Also consider lemmas:
+#check posPart_nonneg
+#check negPart_nonneg
+#check Sum.nonneg_elim_iff
+#check Sum.elim_comp_inl_inr
 
 /-- A system of linear equalities has a solution if and only if
 we cannot obtain a contradiction by taking a linear combination of the equalities. -/
