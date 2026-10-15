@@ -32,7 +32,7 @@ madv@kma.zcu.cz
 * [2026-08-21](LeanUWB/Class07.lean) : properties of functions
 * [2026-08-24](LeanUWB/Class08.lean) : Cantor's theorem
 * [2026-08-25](LeanUWB/Exercises09.lean) : Schröder-Bernstein theorem
-* [2026-08-26](LeanUWB/Class09.lean) : Schröder-Bernstein theorem
+* [2026-08-26](LeanUWB/Class10.lean) : Schröder-Bernstein theorem
 * [2026-08-27](LeanUWB/Class11.lean) : induction
 * [2026-08-28](LeanUWB/Class12.lean) : induction
 * [2026-09-03](LeanUWB/Class13.lean) : induction generalizing
@@ -40,7 +40,7 @@ madv@kma.zcu.cz
 * [2026-09-17](LeanUWB/Class15.lean) : posets
 * [2026-09-25](LeanUWB/Exercises16.lean) : constructions of fixed points
 * [2026-10-02](LeanUWB/Class17.lean) : Schröder-Bernstein theorem again
-* [2026-10-09](LeanUWB/Class18.lean) : advanced linear inequalities
-* 2026-10-16 : TBA
-* 2026-10-23 : TBA
+* [2026-10-09](LeanUWB/Exercises18.lean) : advanced linear inequalities
+* [2026-10-16](LeanUWB/Exercises19.lean) : advanced linear inequalities
+* [2026-10-23](LeanUWB/Class20.lean) : highly advanced linear inequalities
 * 2026-10-30 : TBA

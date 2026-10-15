@@ -1,4 +1,4 @@
-import LeanUWB.Class18
+import LeanUWB.Class20
 import Mathlib.Algebra.Order.Sum
 import Mathlib.LinearAlgebra.Matrix.DotProduct
 import Mathlib.Data.Matrix.ColumnRowPartitioned
