@@ -4,6 +4,9 @@ import Mathlib.Algebra.Module.LinearMap.Basic
 import Mathlib.Algebra.BigOperators.GroupWithZero.Action
 import Mathlib.Tactic.Abel
 
+set_option pp.funBinderTypes true
+set_option pp.piBinderTypes true
+
 
 private def withoutLastMap {m : ℕ} {R W : Type} [Semiring R] [AddCommMonoid W] [Module R W]
     (A : W →ₗ[R] Fin m.succ → R) :
@@ -64,16 +67,15 @@ private lemma filter_yielding_singleton_attach_sum {m : ℕ} {R V : Type} [Semir
     intro i
     constructor <;> rw [Finset.mem_singleton, Finset.mem_filter] <;> intro hi
     · have him := hi.right
-      push Not at him
+      rw [not_lt] at him
       exact le_antisymm (Nat.le_of_lt_succ i.isLt) him
     · refine ⟨Finset.mem_univ i, ?_⟩
       rw [hi]
-      push Not
-      rfl
-  rw [singlet, Finset.sum_attach _ (fun j : Fin m.succ => f j • v), Finset.sum_singleton]
+      apply Nat.lt_irrefl
+  rw [singlet, Finset.sum_attach _ (f · • v), Finset.sum_singleton]
 
 private lemma impossible_index {m : ℕ} {i : Fin m.succ} (hi : ¬(i.val < m)) (i_neq_m : i ≠ ⟨m, m.lt_add_one⟩) : False := by
-  push Not at hi
+  rw [not_lt] at hi
   exact i_neq_m (le_antisymm (Fin.succ_le_succ_iff.→ i.isLt) hi)
 
 variable {R V W : Type}
@@ -126,13 +128,13 @@ private lemma industepFarkasBartl {m : ℕ} [DivisionRing R] [LinearOrder R] [Is
     let M : Fin m.succ := ⟨m, lt_add_one m⟩ -- the last (new) index
     let y : W := (A y' M)⁻¹ • y' -- rescaled `y'`
     have hAy' : A y' M < 0
-    · by_contra! contr
+    · by_contra! h0Ay'
       exact (
         (hAb y' (fun i : Fin m.succ =>
           if hi : i.val < m then
             hay' ⟨i, hi⟩
           else if hiM : i = M then
-            hiM ▸ contr
+            hiM ▸ h0Ay'
           else
             (impossible_index hi hiM).elim
         )).trans_lt hby'
