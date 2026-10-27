@@ -12,7 +12,7 @@ private def withoutLastMap {m : ℕ} {R W : Type} [Semiring R] [AddCommMonoid W]
     (A : W →ₗ[R] Fin m.succ → R) :
     W →ₗ[R] Fin m → R :=
   ⟨⟨
-    fun w : W => fun i : Fin m => A w i.castSucc,
+    (A · ·.castSucc),
   by
     intros
     ext
@@ -197,6 +197,15 @@ theorem finFarkasBartl {n : ℕ} [DivisionRing R] [LinearOrder R] [IsStrictOrder
     (∃ x : Fin n → V, 0 ≤ x ∧ ∀ w : W, ∑ j : Fin n, A w j • x j = b w) ≠ (∃ y : W, 0 ≤ A y ∧ b y < 0) := by
   apply neq_of_iff_not
   push Not
+  -- constructor -- This block is a long form of the line `refine ...` below
+  -- · intro hAb y hAy
+  --   obtain ⟨x, hx, hAxb⟩ := hAb
+  --   rw [←hAxb]
+  --   apply Finset.sum_nonneg
+  --   intro i _
+  --   apply smul_nonneg
+  --   · apply hAy
+  --   · apply hx
   refine ⟨fun ⟨x, hx, hb⟩ y hy => hb y ▸ Finset.sum_nonneg (fun i : Fin n => ↓(smul_nonneg (hy i) (hx i))), ?_⟩
   induction n generalizing b with -- note that `A` is "generalized" automatically
   | zero =>

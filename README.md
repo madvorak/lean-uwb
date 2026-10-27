@@ -43,4 +43,4 @@ madv@kma.zcu.cz
 * [2026-10-09](LeanUWB/Exercises18.lean) : advanced linear inequalities
 * [2026-10-16](LeanUWB/Exercises19.lean) : advanced linear inequalities
 * [2026-10-23](LeanUWB/Class20.lean) : highly advanced linear inequalities
-* 2026-10-30 : TBA
+* [2026-10-30] : highly advanced linear inequalities (continued — the hard part of the hard direction)
